@@ -1,0 +1,16 @@
+my_ecommerce_store/
+│
+├── app.py
+├── templates/
+│   ├── index.html
+│   ├── product.html
+│   ├── cart.html
+│   ├── checkout.html
+├── static/
+│   ├── css/
+│   │   ├── styles.css
+│   ├── images/
+│       ├── product1.jpg
+│       ├── product2.jpg
+│       ├── ...
+└── database.db

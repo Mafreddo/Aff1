@@ -1,0 +1,23 @@
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect('database.db')
+
+# Create a cursor
+c = conn.cursor()
+
+# Create the products table
+c.execute('''CREATE TABLE products
+             (id INTEGER PRIMARY KEY,
+              name TEXT NOT NULL,
+              description TEXT NOT NULL,
+              price REAL NOT NULL,
+              image TEXT NOT NULL)''')
+
+# Insert sample products
+c.execute("INSERT INTO products (name, description, price, image) VALUES ('Product 1', 'Description for product 1', 19.99, 'product1.jpg')")
+c.execute("INSERT INTO products (name, description, price, image) VALUES ('Product 2', 'Description for product 2', 29.99, 'product2.jpg')")
+
+# Commit the changes and close the connection
+conn.commit()
+conn.close()

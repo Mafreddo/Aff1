@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>{{ product['name'] }}</title>
+</head>
+<body>
+    <h1>{{ product['name'] }}</h1>
+    <img src="{{ url_for('static', filename='images/' + product['image']) }}" alt="{{ product['name'] }}">
+    <p>{{ product['description'] }}</p>
+    <p>Price: R{{ product['price'] }}</p>
+    <a href="{{ url_for('add_to_cart', product_id=product['id']) }}">Add to Cart</a>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
